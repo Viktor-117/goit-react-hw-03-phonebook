@@ -11,14 +11,11 @@ import {
 
 let schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.number().min(4).required(),
+  number: yup.string().min(4).required(),
 });
 
 const PhonebookForm = ({ onSubmit }) => {
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    console.log(onSubmit);
-
     onSubmit({
       id: nanoid(),
       name: values.name,
